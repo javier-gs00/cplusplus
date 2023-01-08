@@ -1,6 +1,7 @@
 #define _USE_MATH_DEFINES
 #include <iostream>
 #include <cmath>
+#include <cstdlib>
 using namespace std;
 
 void swap_numbers() {
@@ -61,6 +62,20 @@ void calculate_circle_area() {
     cout << "Area of the circle is: " << area << endl;
 }
 
+// return two random numbers
+// everytime the dice is rolled
+void dice_throw() {
+    const short min_value = 1;
+    const short max_value = 6;
+
+    srand(time(0));
+    int first_throw = (rand() % (max_value - min_value + 1)) + min_value;
+    int second_throw = (rand() % (max_value - min_value + 1)) + min_value;
+
+    cout << "First throw value: " << first_throw << endl;
+    cout << "Second throw value: " << second_throw << endl;
+}
+
 int main() {
     // swap_numbers();
 
@@ -70,7 +85,9 @@ int main() {
 
     // fahrenheit_to_celsius();
 
-    calculate_circle_area();
+    // calculate_circle_area();
+
+    dice_throw();
 
     return 0;
 }
